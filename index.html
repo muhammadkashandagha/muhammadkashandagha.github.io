@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muhammad Kashan | CA &amp; Management Consultant</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        /* ----- RESET & BASE ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8faff;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ----- BUTTONS ----- */
+        .btn {
+            display: inline-block;
+            padding: 14px 34px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(99, 102, 241, 0.45);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #6366f1;
+            border: 2px solid #6366f1;
+        }
+
+        .btn-outline:hover {
+            background: #6366f1;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .btn-pricing {
+            display: inline-block;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.25);
+        }
+
+        .btn-pricing:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(99, 102, 241, 0.35);
+        }
+
+        /* ----- HEADER / NAVIGATION ----- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #334155;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #6366f1;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: #1e293b;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        /* ----- HERO SECTION ----- */
+        .hero {
+            padding: 140px 0 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.4rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+
+        .hero-content h1 .highlight {
+            background: linear-gradient(135deg, #6366f1, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 8px;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #475569;
+            max-width: 480px;
+            margin: 16px 0 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image .avatar-wrapper {
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366f1, #a78bfa);
+            padding: 6px;
+            box-shadow: 0 20px 60px rgba(99, 102, 241, 0.25);
+        }
+
+        .hero-image .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #f8faff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('my-photo.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .social-icons a {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #eef2ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6366f1;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #6366f1;
+            color: #fff;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        /* ----- SECTION COMMON ----- */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 740px;
+            margin: 0 auto 56px;
+        }
+
+        .section-header .subtitle {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #6366f1;
+            background: #eef2ff;
+            padding: 6px 18px;
+            border-radius: 50px;
+            margin-bottom: 12px;
+        }
+
+        .section-header h2 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        /* ----- ABOUT SECTION ----- */
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-text p {
+            color: #475569;
+            font-size: 1.05rem;
+            margin-bottom: 18px;
+        }
+
+        .about-text p strong {
+            color: #1e293b;
+        }
+
+        .about-bullets {
+            margin-top: 8px;
+            margin-bottom: 18px;
+        }
+
+        .about-bullets li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 14px;
+            color: #334155;
+            font-size: 1rem;
+        }
+
+        .about-bullets li i {
+            color: #6366f1;
+            font-size: 1.2rem;
+            width: 24px;
+            text-align: center;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .about-bullets li span {
+            flex: 1;
+        }
+
+        /* ----- SERVICES ----- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            padding: 32px 28px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #6366f1, #a78bfa, #6366f1);
+            background-size: 200% 100%;
+            transition: 0.6s;
+        }
+
+        .service-card:hover::before {
+            background-position: 100% 0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(99, 102, 241, 0.10);
+            border-color: #6366f1;
+        }
+
+        .service-card .service-icon {
+            font-size: 2.2rem;
+            color: #6366f1;
+            margin-bottom: 12px;
+            display: inline-block;
+            background: #eef2ff;
+            padding: 10px 12px;
+            border-radius: 14px;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #1e293b;
+        }
+
+        .service-card .service-desc {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .service-card .service-list {
+            margin-top: 4px;
+        }
+
+        .service-card .service-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 5px 0;
+            color: #475569;
+            font-size: 0.92rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .service-card .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        .service-card .service-list li i {
+            color: #6366f1;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+
+        .service-card .service-list li .srv-name {
+            flex: 1;
+        }
+
+        /* ----- BOOKKEEPING PRICING ----- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 56px;
+        }
+
+        .pricing-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 32px 28px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #6366f1, #a78bfa, #6366f1);
+            background-size: 200% 100%;
+            transition: 0.6s;
+        }
+
+        .pricing-card:hover::before {
+            background-position: 100% 0;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(99, 102, 241, 0.10);
+            border-color: #6366f1;
+        }
+
+        .pricing-card.popular {
+            border-color: #6366f1;
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.12);
+        }
+
+        .pricing-card .popular-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-card .plan-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+
+        .pricing-card .plan-price {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+
+        .pricing-card .plan-price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #94a3b8;
+        }
+
+        .pricing-card .plan-sub {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 16px;
+        }
+
+        .pricing-card .plan-features {
+            flex: 1;
+            margin-bottom: 24px;
+        }
+
+        .pricing-card .plan-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 6px 0;
+            color: #475569;
+            font-size: 0.92rem;
+        }
+
+        .pricing-card .plan-features li i {
+            color: #6366f1;
+            font-size: 0.9rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+            width: 18px;
+            text-align: center;
+        }
+
+        .pricing-card .plan-features li .feature-text {
+            flex: 1;
+        }
+
+        .pricing-card .plan-features li .feature-text .highlight {
+            color: #1e293b;
+            font-weight: 500;
+        }
+
+        .pricing-card .plan-note {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 8px;
+            font-style: italic;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 12px;
+        }
+
+        /* ----- SOFTWARE EXPERTISE ----- */
+        .software-section {
+            text-align: center;
+            background: #fff;
+            border-radius: 24px;
+            padding: 40px 32px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            margin-top: 8px;
+        }
+
+        .software-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            color: #1e293b;
+        }
+
+        .software-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px 40px;
+            align-items: center;
+        }
+
+        .software-logos .software-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #334155;
+        }
+
+        .software-logos .software-item i {
+            font-size: 1.8rem;
+            color: #6366f1;
+            width: 36px;
+            text-align: center;
+        }
+
+        .pricing-tagline {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-top: 40px;
+            padding: 20px 0 4px;
+            border-top: 2px solid #eef2ff;
+        }
+
+        .pricing-tagline span {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ----- BLOG SECTION ----- */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 48px rgba(99, 102, 241, 0.10);
+            border-color: #6366f1;
+        }
+
+        .blog-card .blog-image-link {
+            display: block;
+            overflow: hidden;
+            height: 200px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .blog-card .blog-image {
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #ffffff;
+        }
+
+        .blog-card:hover .blog-image {
+            transform: scale(1.05);
+        }
+
+        .blog-card .blog-content {
+            padding: 24px 28px 28px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card .blog-meta {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-bottom: 10px;
+        }
+
+        .blog-card .blog-meta .blog-tag {
+            background: #eef2ff;
+            color: #6366f1;
+            padding: 2px 14px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .blog-card .blog-meta time {
+            color: #94a3b8;
+        }
+
+        .blog-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1e293b;
+            line-height: 1.4;
+        }
+
+        .blog-card h3 a {
+            color: #1e293b;
+            transition: color 0.3s ease;
+        }
+
+        .blog-card h3 a:hover {
+            color: #6366f1;
+        }
+
+        .blog-card .blog-excerpt {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .blog-card .blog-readmore {
+            align-self: flex-start;
+            font-weight: 600;
+            color: #6366f1;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .blog-card .blog-readmore:hover {
+            gap: 12px;
+        }
+
+        /* ----- TESTIMONIALS ----- */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            padding: 32px 28px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 36px rgba(99, 102, 241, 0.08);
+        }
+
+        .testimonial-card .stars {
+            color: #fbbf24;
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-card blockquote {
+            font-size: 1rem;
+            color: #334155;
+            font-style: italic;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .testimonial-card .client {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .testimonial-card .client .avatar-sm {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #eef2ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #6366f1;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .testimonial-card .client .name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-card .client .role {
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        /* ----- CONTACT ----- */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            background: #fff;
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .contact-info h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+
+        .contact-info p {
+            color: #64748b;
+            margin-bottom: 24px;
+        }
+
+        .contact-info .detail {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .contact-info .detail i {
+            width: 44px;
+            height: 44px;
+            background: #eef2ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6366f1;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            background: #f8faff;
+            font-family: inherit;
+            margin-bottom: 16px;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.08);
+        }
+
+        .contact-form textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .contact-form .btn {
+            width: 100%;
+        }
+
+        /* ----- FOOTER ----- */
+        footer {
+            background: #fff;
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+            padding: 32px 0;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: #6366f1;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .social-icons {
+                justify-content: center;
+            }
+            .hero-image .avatar-wrapper {
+                width: 280px;
+                height: 280px;
+            }
+            .hero-content h1 {
+                font-size: 2.6rem;
+            }
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                padding: 32px 24px;
+            }
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .pricing-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .blog-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 72px;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(12px);
+                flex-direction: column;
+                padding: 32px 24px;
+                gap: 20px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+                transform: translateY(-120%);
+                transition: transform 0.4s ease;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            }
+            .nav-links.open {
+                transform: translateY(0);
+            }
+            .hamburger {
+                display: flex;
+            }
+            .hero {
+                padding-top: 110px;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 420px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .software-logos {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-image .avatar-wrapper {
+                width: 200px;
+                height: 200px;
+            }
+            .contact-wrapper {
+                padding: 24px 16px;
+            }
+            .pricing-grid {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header id="header">
+        <nav class="container">
+            <a href="#" class="logo">MK.</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#bookkeeping">Bookkeeping</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <p class="tagline">👋 Hello, I'm</p>
+                <h1>
+                    Muhammad <span class="highlight">Kashan</span>
+                </h1>
+                <p>
+                    <strong>Practicing Chartered Accountant (ACA, ICAP)</strong><br />
+                    Management Consultant<br /><br />
+                    I help businesses strengthen their finance function through financial reporting, internal controls, and practical business solutions.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Let's Talk</a>
+                    <a href="#about" class="btn btn-outline">More About Me</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://wa.me/923333397984" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.linkedin.com/in/kashandagha/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="avatar-wrapper">
+                    <div class="avatar"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" style="background: #fff;">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">About Me</span>
+                <h2>Who I Am &amp; What Drives Me</h2>
+                <p>Helping SMEs and growing businesses build stronger finance functions with structure and clarity.</p>
+            </div>
+            <div class="about-text">
+                <p>
+                    I am <strong>Muhammad Kashan, ACA (ICAP)</strong>, a Practicing Chartered Accountant and Management Consultant helping SMEs and growing businesses build stronger finance functions.
+                </p>
+                <p>
+                    My career began in audit and assurance, where I led engagements across multiple industries under <strong>International Standards on Auditing (ISA)</strong>. This experience gave me a deep understanding of financial reporting, internal controls, risk assessment, and regulatory compliance.
+                </p>
+                <p>
+                    Today, I work closely with business owners as a trusted finance partner, helping them bring structure, clarity, and discipline to their finance operations.
+                </p>
+                <p>My areas of expertise include:</p>
+                <ul class="about-bullets">
+                    <li><i class="fas fa-check-circle"></i><span><strong>Financial reporting and IFRS advisory</strong></span></li>
+                    <li><i class="fas fa-check-circle"></i><span><strong>Bookkeeping and accounting system implementation</strong></span></li>
+                    <li><i class="fas fa-check-circle"></i><span><strong>Internal controls and process improvement</strong></span></li>
+                    <li><i class="fas fa-check-circle"></i><span><strong>Management reporting and performance dashboards</strong></span></li>
+                    <li><i class="fas fa-check-circle"></i><span><strong>Income tax and sales tax compliance</strong></span></li>
+                    <li><i class="fas fa-check-circle"></i><span><strong>Fractional Finance Manager services for SMEs</strong></span></li>
+                </ul>
+                <p>
+                    I believe accounting is more than compliance. Numbers should help business owners make better decisions, manage risks confidently, and grow sustainably.
+                </p>
+                <p>
+                    My goal is simple: to provide financial clarity and peace of mind so that business owners can focus on building their vision while I take care of the numbers.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services" style="background: #f8faff;">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">What I Do</span>
+                <h2>Finance Leadership for Growing Businesses</h2>
+                <p>I help SMEs and startups build stronger finance functions through practical accounting, financial reporting, internal controls, and people advisory services.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Fractional Finance Manager</h3>
+                    <p class="service-desc">Part-time finance leadership for businesses that need an experienced finance professional without hiring a full-time CFO.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Budgeting and cash flow management</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Management reporting and KPIs</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Financial planning and analysis</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Internal controls and process improvement</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Business performance reviews</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Board and management reporting</span></li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-file-invoice"></i></div>
+                    <h3>Financial Reporting &amp; Accounting</h3>
+                    <p class="service-desc">Reliable accounting and reporting solutions designed to keep your business compliant and decision-ready.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">IFRS-compliant financial statements</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Bookkeeping and accounting system setup</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Month-end and year-end closing</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Management accounts and dashboards</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Transaction accounting and technical guidance</span></li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-users"></i></div>
+                    <h3>Payroll &amp; Employee Benefits</h3>
+                    <p class="service-desc">End-to-end payroll and employee benefits support to ensure accuracy, compliance, and smooth employee transitions.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Payroll processing</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Employee withholding tax calculations</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Final settlements</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Gratuity and end-of-service benefit calculations</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Leave encashment and employee dues</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Payroll reconciliations</span></li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3>Finance Recruitment Support</h3>
+                    <p class="service-desc">Helping businesses hire the right finance talent through practical evaluation and technical assessment.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Review of finance and accounting CVs</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Candidate shortlisting</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Technical interview support</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Finance competency assessments</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Hiring recommendations</span></li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <h3>Tax Compliance</h3>
+                    <p class="service-desc">Practical tax support to help businesses remain compliant and manage tax risks effectively.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Income tax compliance</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Sales tax compliance</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Tax return filing</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Tax advisory and notices</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INTERNATIONAL BOOKKEEPING SERVICES ===== -->
+    <section id="bookkeeping">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Remote Bookkeeping Solutions</span>
+                <h2>International Bookkeeping Services</h2>
+                <p>Professional remote bookkeeping and finance support for startups and SMEs looking for accurate books, reliable reporting, and efficient finance operations.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-name">Starter</div>
+                    <div class="plan-price">USD 149 <span>/ month</span></div>
+                    <div class="plan-sub">Ideal for freelancers and small businesses.</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Up to 100 transactions per month</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Recording and classification of transactions</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Bank and credit card reconciliations</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Accounts payable and receivable tracking</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Monthly financial reports</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Email support</span></li>
+                    </ul>
+                    <a href="#contact" class="btn-pricing">Get Started</a>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Popular</div>
+                    <div class="plan-name">Growth</div>
+                    <div class="plan-price">USD 299 <span>/ month</span></div>
+                    <div class="plan-sub">Designed for growing businesses.</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Up to 300 transactions per month</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Full-cycle bookkeeping</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Month-end closing</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Accounts payable &amp; receivable management</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Payroll calculations</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Monthly management accounts</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Cash flow reporting</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Priority support</span></li>
+                    </ul>
+                    <a href="#contact" class="btn-pricing">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="plan-name">Premium</div>
+                    <div class="plan-price">USD 499 <span>/ month</span></div>
+                    <div class="plan-sub">For businesses seeking a complete outsourced finance function.</div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text"><span class="highlight">Unlimited transactions*</span></span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">End-to-end bookkeeping</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Financial statement preparation</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Payroll and employee tax calculations</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Gratuity and final settlement calculations</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Internal controls and process improvement</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Management reporting and dashboards</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Finance recruitment and interview assistance</span></li>
+                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Dedicated support</span></li>
+                    </ul>
+                    <div class="plan-note">*Pricing may vary depending on transaction volume and business complexity.</div>
+                    <a href="#contact" class="btn-pricing" style="margin-top: 16px;">Get Started</a>
+                </div>
+            </div>
+            <div class="software-section">
+                <h3>Software Expertise</h3>
+                <div class="software-logos">
+                    <div class="software-item"><i class="fab fa-google"></i> QuickBooks Online</div>
+                    <div class="software-item"><i class="fas fa-cloud"></i> Xero</div>
+                    <div class="software-item"><i class="fas fa-book"></i> Zoho Books</div>
+                    <div class="software-item"><i class="fas fa-file-excel"></i> Microsoft Excel</div>
+                </div>
+            </div>
+            <div class="pricing-tagline">
+                <span>Clean Books. Reliable Reports. Better Decisions.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BLOG SECTION ===== -->
+    <section id="blog" style="background: #f8faff;">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Insights &amp; Resources</span>
+                <h2>Latest from the Blog</h2>
+                <p>Practical tips, best practices, and expert insights on bookkeeping, accounting, and finance for growing businesses.</p>
+            </div>
+            <div class="blog-grid">
+
+                <!-- Blog Post 1: AI and Accountant -->
+                <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+                    <a href="blog-ai.png" target="_blank" class="blog-image-link">
+                        <div class="blog-image" style="background-image: url('blog-ai.png');"></div>
+                    </a>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-tag">Technology</span>
+                            <time datetime="2026-06-18" itemprop="datePublished">June 18, 2026</time>
+                        </div>
+                        <h3 itemprop="headline">
+                            <a href="ai-and-accountant.html" itemprop="url">AI and Accountant: 7 Powerful Changes Every Accountant Must Know in 2026</a>
+                        </h3>
+                        <p class="blog-excerpt" itemprop="description">
+                            Discover how artificial intelligence is transforming accounting — from automating bookkeeping to predicting financial trends and detecting fraud.
+                        </p>
+                        <a href="ai-and-accountant.html" class="blog-readmore">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2: Bookkeeping vs Accounting -->
+                <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+                    <a href="blog-bookkeeping.png" target="_blank" class="blog-image-link">
+                        <div class="blog-image" style="background-image: url('blog-bookkeeping.png');"></div>
+                    </a>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-tag">Bookkeeping</span>
+                            <time datetime="2026-06-20" itemprop="datePublished">June 20, 2026</time>
+                        </div>
+                        <h3 itemprop="headline">
+                            <a href="bookkeeping-vs-accounting.html" itemprop="url">Bookkeeping vs Accounting: 11 Key Differences Every Business Owner Must Know in 2026</a>
+                        </h3>
+                        <p class="blog-excerpt" itemprop="description">
+                            Discover the key differences between bookkeeping and accounting, including roles, salaries, skills, and how AI is transforming both professions.
+                        </p>
+                        <a href="bookkeeping-vs-accounting.html" class="blog-readmore">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3: Ethical Issues in Accounting -->
+                <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+                    <a href="blog-ethics.png" target="_blank" class="blog-image-link">
+                        <div class="blog-image" style="background-image: url('blog-ethics.png');"></div>
+                    </a>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-tag">Ethics</span>
+                            <time datetime="2026-06-22" itemprop="datePublished">June 22, 2026</time>
+                        </div>
+                        <h3 itemprop="headline">
+                            <a href="ethical-issues-in-accounting.html" itemprop="url">Top 10 Ethical Issues in Accounting Every Professional Must Know in 2026</a>
+                        </h3>
+                        <p class="blog-excerpt" itemprop="description">
+                            Discover the top 10 ethical issues in accounting, including earnings manipulation, insider trading, tax evasion, conflicts of interest, and fraudulent financial reporting.
+                        </p>
+                        <a href="ethical-issues-in-accounting.html" class="blog-readmore">Read More →</a>
+                    </div>
+                </article>
+
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="btn btn-outline">View All Articles →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Client Stories</span>
+                <h2>What My Clients Say</h2>
+                <p>Real feedback from people I've had the pleasure of working with.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>
+                        “Muhammad Kashan handles all my accounting and tax filings with complete professionalism. As a media buyer, my income streams can be complex, but he manages everything seamlessly — from bookkeeping to filing my income tax returns. I don't have to worry about a thing.”
+                    </blockquote>
+                    <div class="client">
+                        <div class="avatar-sm">MT</div>
+                        <div>
+                            <div class="name">Muhammad Talha</div>
+                            <div class="role">Media Buyer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>
+                        “Kashan takes care of the full bookkeeping for Panwala Estate and files income tax returns for me and my family members. His attention to detail and deep understanding of tax laws give us complete peace of mind. I highly recommend him to any business owner.”
+                    </blockquote>
+                    <div class="client">
+                        <div class="avatar-sm">HP</div>
+                        <div>
+                            <div class="name">Hamza Panwala</div>
+                            <div class="role">Panwala Estate</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>
+                        “I rely on Muhammad Kashan for inventory valuation, sales tax annexure calculations, and management reporting. His professionalism and ability to deliver with a quick turnaround have made him an invaluable partner. The quality and timeliness of his work are consistently excellent.”
+                    </blockquote>
+                    <div class="client">
+                        <div class="avatar-sm">SH</div>
+                        <div>
+                            <div class="name">Safdar Hussain</div>
+                            <div class="role">Director Finance</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>
+                        “Muhammad Kashan handles end-to-end bookkeeping for my restaurant and clothing brand in Karachi. His reporting and business analytics have given me real clarity on my operations — I finally understand where my money is going and how to grow profitably.”
+                    </blockquote>
+                    <div class="client">
+                        <div class="avatar-sm">JF</div>
+                        <div>
+                            <div class="name">Jaki &amp; Family</div>
+                            <div class="role">Restaurant &amp; Clothing Brand Owner</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT (UPDATED WITH mailto:) ===== -->
+    <section id="contact" style="background: #f8faff;">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Get In Touch</span>
+                <h2>Let's Work Together</h2>
+                <p>Have a financial challenge or a project in mind? I'd love to hear from you.</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Reach out via email, phone, or connect on social media.</p>
+                    <div class="detail">
+                        <i class="fas fa-envelope"></i>
+                        <span>kashan.hussain25@gmail.com</span>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+92 333 397984</span>
+                    </div>
+                    <div class="detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Karachi, Pakistan</span>
+                    </div>
+                    <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: wrap;">
+                        <a href="https://wa.me/923333397984" target="_blank" class="btn btn-primary" style="padding: 12px 28px;"><i class="fab fa-whatsapp" style="margin-right: 8px;"></i> WhatsApp</a>
+                        <a href="https://www.linkedin.com/in/kashandagha/" target="_blank" class="btn btn-outline" style="padding: 12px 28px;"><i class="fab fa-linkedin-in" style="margin-right: 8px;"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <!-- CONTACT FORM WITH mailto: -->
+                <form class="contact-form" action="mailto:kashan.hussain25@gmail.com" method="POST" enctype="text/plain">
+                    <input type="text" name="name" placeholder="Your Name" required />
+                    <input type="email" name="email" placeholder="Email Address" required />
+                    <input type="text" name="subject" placeholder="Subject" />
+                    <textarea name="message" placeholder="Tell me about your accounting or bookkeeping needs…" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 <span>Muhammad Kashan</span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+            });
+        });
+
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = 'home';
+            sections.forEach(section => {
+                const top = section.offsetTop - 100;
+                if (window.scrollY >= top) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+
+            const header = document.getElementById('header');
+            if (window.scrollY > 20) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ---- Contact form with mailto: ----
+        // No alert needed — the form will open the user's email client
+    </script>
+
+</body>
+</html>
