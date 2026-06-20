@@ -35,7 +35,7 @@
             "https://www.linkedin.com/in/kashandagha/",
             "https://wa.me/923333397984"
         ],
-        "priceRange": "PKR 15,000 - 85,000+",
+        "priceRange": "PKR 25,000 - 85,000+",
         "areaServed": "Karachi, Pakistan",
         "serviceArea": {
             "@type": "Place",
@@ -515,14 +515,14 @@
             flex: 1;
         }
 
-        /* ----- SERVICES ----- */
+        /* ----- SERVICES (IMPROVED LAYOUT) ----- */
         #services {
             background: var(--bg-light);
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
@@ -535,6 +535,7 @@
             border: 1px solid rgba(26, 54, 93, 0.04);
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
 
         .service-card::before {
@@ -560,7 +561,7 @@
         }
 
         .service-card .service-icon {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 12px;
             display: inline-block;
@@ -585,6 +586,7 @@
 
         .service-card .service-list {
             margin-top: 4px;
+            text-align: left;
         }
 
         .service-card .service-list li {
@@ -612,48 +614,29 @@
             flex: 1;
         }
 
-        /* ----- BOOKKEEPING PRICING (LOCAL — PKR) ----- */
-        #bookkeeping {
+        /* ----- PRICING (NEW THREE-TIER PKR) ----- */
+        #pricing {
             background: var(--bg-white);
         }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
-            margin-bottom: 56px;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
         .pricing-card {
             background: var(--bg-white);
+            padding: 32px 28px;
             border-radius: var(--radius);
-            padding: 36px 30px;
             box-shadow: var(--shadow);
             border: 1px solid rgba(26, 54, 93, 0.04);
             transition: var(--transition);
             display: flex;
             flex-direction: column;
             position: relative;
-            overflow: hidden;
-        }
-
-        .pricing-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
-            background-size: 200% 100%;
-            transition: 0.6s;
-        }
-
-        .pricing-card:hover::before {
-            background-position: 100% 0;
         }
 
         .pricing-card:hover {
@@ -678,21 +661,19 @@
             padding: 4px 14px;
             border-radius: 50px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .pricing-card .plan-name {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--primary);
-            margin-bottom: 4px;
         }
 
         .pricing-card .plan-price {
             font-size: 2.2rem;
             font-weight: 800;
             color: var(--primary);
-            margin-bottom: 4px;
+            margin: 4px 0;
         }
 
         .pricing-card .plan-price span {
@@ -703,131 +684,53 @@
 
         .pricing-card .plan-sub {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 14px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-            padding-bottom: 16px;
+            padding-bottom: 12px;
         }
 
         .pricing-card .plan-features {
             flex: 1;
-            margin-bottom: 24px;
+            margin-bottom: 18px;
         }
 
         .pricing-card .plan-features li {
             display: flex;
             align-items: flex-start;
-            gap: 12px;
-            padding: 6px 0;
+            gap: 10px;
+            padding: 5px 0;
             color: var(--text-muted);
-            font-size: 0.92rem;
+            font-size: 0.88rem;
+            border-bottom: 1px solid #f8fafc;
+        }
+
+        .pricing-card .plan-features li:last-child {
+            border-bottom: none;
         }
 
         .pricing-card .plan-features li i {
             color: var(--accent);
-            font-size: 0.9rem;
-            margin-top: 3px;
-            flex-shrink: 0;
-            width: 18px;
-            text-align: center;
-        }
-
-        .pricing-card .plan-features li .feature-text {
-            flex: 1;
-        }
-
-        .pricing-card .plan-features li .feature-text .highlight {
-            color: var(--primary);
-            font-weight: 500;
-        }
-
-        .pricing-card .plan-note {
             font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 8px;
-            font-style: italic;
-            border-top: 1px solid rgba(0, 0, 0, 0.04);
-            padding-top: 12px;
+            margin-top: 4px;
+            width: 16px;
+            text-align: center;
+            flex-shrink: 0;
         }
 
-        .pricing-offer {
+        .pricing-card .btn {
+            width: 100%;
             text-align: center;
+        }
+
+        .pricing-note {
+            text-align: center;
+            margin-top: 24px;
             color: var(--text-muted);
             font-size: 0.9rem;
         }
 
-        .pricing-offer strong {
-            color: var(--accent);
-        }
-
-        .pricing-international-link {
-            text-align: center;
-            margin-top: 32px;
-        }
-
-        .pricing-international-link a {
-            color: var(--accent);
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .pricing-international-link a:hover {
-            color: var(--accent-dark);
-            text-decoration: underline;
-        }
-
-        /* ----- SOFTWARE EXPERTISE ----- */
-        .software-section {
-            text-align: center;
-            background: var(--bg-light);
-            border-radius: var(--radius);
-            padding: 40px 32px;
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(26, 54, 93, 0.04);
-            margin-top: 8px;
-        }
-
-        .software-section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 16px;
-            color: var(--primary);
-        }
-
-        .software-logos {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 24px 40px;
-            align-items: center;
-        }
-
-        .software-logos .software-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1rem;
-            font-weight: 500;
-            color: var(--text-muted);
-        }
-
-        .software-logos .software-item i {
-            font-size: 1.8rem;
-            color: var(--primary);
-            width: 36px;
-            text-align: center;
-        }
-
-        .pricing-tagline {
-            text-align: center;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-top: 40px;
-            padding: 20px 0 4px;
-            border-top: 2px solid rgba(201, 168, 76, 0.2);
-        }
-
-        .pricing-tagline span {
+        .pricing-note strong {
             color: var(--accent);
         }
 
@@ -1335,9 +1238,7 @@
 
             .pricing-grid {
                 grid-template-columns: 1fr;
-                max-width: 420px;
-                margin-left: auto;
-                margin-right: auto;
+                max-width: 400px;
             }
 
             .blog-grid {
@@ -1397,8 +1298,7 @@
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#bookkeeping">Pricing</a></li>
-                <li><a href="international.html">🌍 International</a></li>
+                <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
@@ -1480,7 +1380,7 @@
         </div>
     </section>
 
-    <!-- ===== SERVICES ===== -->
+    <!-- ===== SERVICES (IMPROVED) ===== -->
     <section id="services">
         <div class="container">
             <div class="section-header">
@@ -1554,97 +1454,81 @@
         </div>
     </section>
 
-    <!-- ===== BOOKKEEPING PRICING (LOCAL — PKR) ===== -->
-    <section id="bookkeeping">
+    <!-- ===== PRICING (NEW THREE-TIER PKR) ===== -->
+    <section id="pricing">
         <div class="container">
             <div class="section-header">
-                <span class="subtitle">💰 Pricing for Local Clients</span>
-                <h2>Affordable Bookkeeping — In PKR</h2>
-                <p>Transparent pricing designed for Pakistani SMEs and startups in Karachi, Lahore, and across Pakistan.</p>
+                <span class="subtitle">💰 Clear Pricing. No Surprises.</span>
+                <h2>Choose the Plan That Fits Your Business</h2>
+                <p>Every plan includes professional bookkeeping services. The difference is the depth of support.</p>
             </div>
-
             <div class="pricing-grid">
 
-                <!-- Starter — PKR -->
+                <!-- BASIC -->
                 <div class="pricing-card">
-                    <div class="plan-name">Starter</div>
+                    <div class="plan-name">Basic</div>
                     <div class="plan-price">PKR 25,000 <span>/ month</span></div>
-                    <div class="plan-sub">Ideal for freelancers and small businesses in Karachi.</div>
+                    <div class="plan-sub">Essential bookkeeping for freelancers &amp; small businesses</div>
+
                     <ul class="plan-features">
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Up to 100 transactions per month</span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Recording and classification of transactions</span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Bank and credit card reconciliations</span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Accounts payable and receivable tracking</span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Monthly financial reports</span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Email support</span></li>
+                        <li><i class="fas fa-check-circle"></i> Up to 100 transactions/month</li>
+                        <li><i class="fas fa-check-circle"></i> Transaction recording &amp; classification</li>
+                        <li><i class="fas fa-check-circle"></i> Bank &amp; credit card reconciliation</li>
+                        <li><i class="fas fa-check-circle"></i> Monthly management accounts (P&amp;L and Balance Sheet)</li>
+                        <li><i class="fas fa-check-circle"></i> Email support</li>
                     </ul>
-                    <a href="#contact" class="btn-pricing">Get Started</a>
+
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
                 </div>
 
-                <!-- Growth — PKR (Popular) -->
+                <!-- GROWTH (POPULAR) -->
                 <div class="pricing-card popular">
-                    <div class="popular-badge">Popular</div>
+                    <span class="popular-badge">Popular</span>
                     <div class="plan-name">Growth</div>
                     <div class="plan-price">PKR 49,000 <span>/ month</span></div>
-                    <div class="plan-sub">Designed for growing businesses in Pakistan.</div>
+                    <div class="plan-sub">Full-cycle bookkeeping for growing businesses</div>
+
                     <ul class="plan-features">
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Up to 300 transactions per month</span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Full-cycle bookkeeping</span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Month-end closing</span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Accounts payable &amp; receivable management</span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Payroll calculations</span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Monthly management accounts</span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Cash flow reporting</span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Priority support</span></li>
+                        <li><i class="fas fa-check-circle"></i> Up to 300 transactions/month</li>
+                        <li><i class="fas fa-check-circle"></i> Transaction recording &amp; classification</li>
+                        <li><i class="fas fa-check-circle"></i> Bank &amp; credit card reconciliation</li>
+                        <li><i class="fas fa-check-circle"></i> Invoicing &amp; billing management</li>
+                        <li><i class="fas fa-check-circle"></i> Accounts Payable (AP) &amp; Accounts Receivable (AR) management</li>
+                        <li><i class="fas fa-check-circle"></i> Expense tracking &amp; categorization</li>
+                        <li><i class="fas fa-check-circle"></i> Month-end close</li>
+                        <li><i class="fas fa-check-circle"></i> Monthly management accounts</li>
+                        <li><i class="fas fa-check-circle"></i> Priority support</li>
+                        <li><i class="fas fa-check-circle"></i> 30-minute strategy call</li>
                     </ul>
-                    <a href="#contact" class="btn-pricing">Get Started</a>
+
+                    <a href="#contact" class="btn btn-accent">Get Started</a>
                 </div>
 
-                <!-- Premium — PKR -->
+                <!-- PREMIUM -->
                 <div class="pricing-card">
                     <div class="plan-name">Premium</div>
                     <div class="plan-price">PKR 85,000+ <span>/ month</span></div>
-                    <div class="plan-sub">For businesses seeking a complete outsourced finance function.</div>
+                    <div class="plan-sub">Complete outsourced finance function</div>
+
                     <ul class="plan-features">
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text"><span class="highlight">Unlimited transactions*</span></span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">End-to-end bookkeeping</span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Financial statement preparation</span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Payroll and employee tax calculations</span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Gratuity and final settlement calculations</span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Internal controls and process improvement</span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Management reporting and dashboards</span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Finance recruitment and interview assistance</span></li>
-                        <li><i class="fas fa-check-circle"></i><span class="feature-text">Dedicated support</span></li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Unlimited transactions/month</strong></li>
+                        <li><i class="fas fa-check-circle"></i> Transaction recording &amp; classification</li>
+                        <li><i class="fas fa-check-circle"></i> Bank &amp; credit card reconciliation</li>
+                        <li><i class="fas fa-check-circle"></i> Invoicing &amp; billing management</li>
+                        <li><i class="fas fa-check-circle"></i> Accounts Payable (AP) &amp; Accounts Receivable (AR) management</li>
+                        <li><i class="fas fa-check-circle"></i> Expense tracking &amp; categorization</li>
+                        <li><i class="fas fa-check-circle"></i> Month-end &amp; year-end close</li>
+                        <li><i class="fas fa-check-circle"></i> Management reporting &amp; dashboards</li>
+                        <li><i class="fas fa-check-circle"></i> Cash flow forecasting</li>
+                        <li><i class="fas fa-check-circle"></i> Payroll &amp; employee tax computation</li>
+                        <li><i class="fas fa-check-circle"></i> 1-hour strategy call</li>
                     </ul>
-                    <div class="plan-note">*Pricing may vary depending on transaction volume and business complexity.</div>
-                    <a href="#contact" class="btn-pricing" style="margin-top: 16px;">Get Started</a>
+
+                    <a href="#contact" class="btn btn-primary">Get Started</a>
                 </div>
 
             </div>
-
-            <div class="pricing-offer">
-                💡 <strong>Special Offer:</strong> First month at <strong>PKR 15,000</strong> — let me prove my value before you commit.
-            </div>
-
-            <div class="pricing-international-link">
-                🌍 <strong>Also serving international clients</strong> — 
-                <a href="international.html">View international pricing (USD) →</a>
-            </div>
-
-            <!-- Software Expertise -->
-            <div class="software-section" style="margin-top: 48px;">
-                <h3>Software Expertise</h3>
-                <div class="software-logos">
-                    <div class="software-item"><i class="fab fa-google"></i> QuickBooks Online</div>
-                    <div class="software-item"><i class="fas fa-cloud"></i> Xero</div>
-                    <div class="software-item"><i class="fas fa-book"></i> Zoho Books</div>
-                    <div class="software-item"><i class="fas fa-file-excel"></i> Microsoft Excel</div>
-                </div>
-            </div>
-
-            <div class="pricing-tagline">
-                <span>Clean Books. Reliable Reports. Better Decisions.</span>
-            </div>
+            <p class="pricing-note">💡 <strong>Special Offer:</strong> Try Basic or Growth for your first month at just <strong>PKR 15,000</strong> — let the results speak before you commit.</p>
         </div>
     </section>
 
@@ -1942,10 +1826,10 @@
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
                     <a href="#services">Services</a>
-                    <a href="#bookkeeping">Pricing</a>
-                    <a href="international.html">🌍 International</a>
+                    <a href="#pricing">Pricing</a>
                     <a href="#blog">Blog</a>
                     <a href="#faq">FAQ</a>
+                    <a href="international.html">🌍 International Clients</a>
                 </div>
                 <div class="footer-links">
                     <h4>Connect</h4>
