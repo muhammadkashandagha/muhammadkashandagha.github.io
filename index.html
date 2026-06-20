@@ -9,18 +9,78 @@
       gtag('js', new Date());
       gtag('config', 'G-J49G5EZ3VM');
     </script>
-    
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Muhammad Kashan | CA &amp; Management Consultant</title>
-    <meta name="description" content="Muhammad Kashan is a Practicing Chartered Accountant (ACA, ICAP) and Management Consultant helping SMEs and growing businesses strengthen their finance functions." />
-    
+    <title>Muhammad Kashan Dagha (MKD) | Chartered Accountant in Karachi, Pakistan</title>
+    <meta name="description" content="Muhammad Kashan Dagha (MKD) is a Practicing Chartered Accountant (ACA, ICAP) and Management Consultant in Karachi, Pakistan. I help SMEs with bookkeeping, tax compliance, and financial reporting services." />
+    <meta name="keywords" content="Muhammad Kashan Dagha, MKD, Chartered Accountant Karachi, Bookkeeping Services Pakistan, Tax Consultant Karachi, Fractional Finance Manager, IFRS Reporting, SME Finance Consultant Karachi, Accountant near me Karachi" />
+
+    <!-- Local Business Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Muhammad Kashan Dagha (MKD) - Chartered Accountant",
+        "description": "Practicing Chartered Accountant (ACA, ICAP) and Management Consultant in Karachi, Pakistan. Providing bookkeeping, tax compliance, and financial reporting services for SMEs.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Karachi",
+            "addressCountry": "PK"
+        },
+        "telephone": "+92 333 397984",
+        "email": "kashan.hussain25@gmail.com",
+        "url": "https://muhammadkashandagha.github.io",
+        "sameAs": [
+            "https://www.linkedin.com/in/kashandagha/",
+            "https://wa.me/923333397984"
+        ],
+        "priceRange": "PKR 15,000 - 85,000+",
+        "areaServed": "Karachi, Pakistan",
+        "serviceArea": {
+            "@type": "Place",
+            "addressLocality": "Karachi",
+            "addressCountry": "PK"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Accounting & Bookkeeping Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Bookkeeping Services",
+                        "description": "Full-cycle bookkeeping for SMEs in Karachi"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Tax Compliance",
+                        "description": "Income tax and sales tax compliance in Pakistan"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Fractional Finance Manager",
+                        "description": "Part-time finance leadership for businesses"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    
+
     <style>
         /* ----- RESET & BASE ----- */
         * {
@@ -229,6 +289,27 @@
             transition: var(--transition);
         }
 
+        /* ----- INTERNATIONAL BANNER ----- */
+        .international-banner {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: #fff;
+            padding: 12px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 999;
+        }
+
+        .international-banner a {
+            color: var(--accent-light);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .international-banner a:hover {
+            color: #fff;
+        }
+
         /* ----- HERO SECTION ----- */
         .hero {
             padding: 160px 0 100px;
@@ -284,7 +365,7 @@
         .hero-content p {
             font-size: 1.1rem;
             color: var(--text-muted);
-            max-width: 480px;
+            max-width: 520px;
             margin: 16px 0 32px;
             line-height: 1.8;
         }
@@ -531,7 +612,7 @@
             flex: 1;
         }
 
-        /* ----- BOOKKEEPING PRICING ----- */
+        /* ----- BOOKKEEPING PRICING (LOCAL — PKR) ----- */
         #bookkeeping {
             background: var(--bg-white);
         }
@@ -541,6 +622,9 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-bottom: 56px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .pricing-card {
@@ -605,7 +689,7 @@
         }
 
         .pricing-card .plan-price {
-            font-size: 2.6rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: var(--primary);
             margin-bottom: 4px;
@@ -664,6 +748,32 @@
             font-style: italic;
             border-top: 1px solid rgba(0, 0, 0, 0.04);
             padding-top: 12px;
+        }
+
+        .pricing-offer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .pricing-offer strong {
+            color: var(--accent);
+        }
+
+        .pricing-international-link {
+            text-align: center;
+            margin-top: 32px;
+        }
+
+        .pricing-international-link a {
+            color: var(--accent);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .pricing-international-link a:hover {
+            color: var(--accent-dark);
+            text-decoration: underline;
         }
 
         /* ----- SOFTWARE EXPERTISE ----- */
@@ -841,9 +951,91 @@
             gap: 12px;
         }
 
+        /* ----- FAQ SECTION ----- */
+        #faq {
+            background: var(--bg-white);
+        }
+
+        .faq-item {
+            background: var(--bg-white);
+            border-radius: var(--radius-sm);
+            margin-bottom: 16px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(26, 54, 93, 0.06);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: rgba(201, 168, 76, 0.2);
+        }
+
+        .faq-question {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+            background: var(--bg-white);
+        }
+
+        .faq-question:hover {
+            background: #f8fafc;
+        }
+
+        .faq-question h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin: 0;
+            flex: 1;
+        }
+
+        .faq-question .faq-icon {
+            color: var(--accent);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            display: inline-block;
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+
+        .faq-question .faq-icon.open {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-answer.open {
+            max-height: 300px;
+            padding: 0 24px 20px 24px;
+        }
+
+        .faq-answer p {
+            margin: 0;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .faq-answer p a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .faq-answer p a:hover {
+            text-decoration: underline;
+        }
+
         /* ----- TESTIMONIALS ----- */
         #testimonials {
-            background: var(--bg-white);
+            background: var(--bg-light);
         }
 
         .testimonials-grid {
@@ -855,7 +1047,7 @@
         }
 
         .testimonial-card {
-            background: var(--bg-light);
+            background: var(--bg-white);
             padding: 32px 28px;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
@@ -1189,16 +1381,26 @@
 </head>
 <body>
 
+    <!-- ===== INTERNATIONAL BANNER ===== -->
+    <div class="international-banner">
+        <div class="container">
+            🌍 <strong>Also serving international clients!</strong> 
+            <a href="international.html">Click here</a> for remote bookkeeping services for global SMEs.
+        </div>
+    </div>
+
     <!-- ===== HEADER ===== -->
     <header id="header">
         <nav class="container">
-            <a href="#" class="logo">MK<span>.</span></a>
+            <a href="#" class="logo">MKD<span>.</span></a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#bookkeeping">Bookkeeping</a></li>
+                <li><a href="#bookkeeping">Pricing</a></li>
+                <li><a href="international.html">🌍 International</a></li>
                 <li><a href="#blog">Blog</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -1216,15 +1418,16 @@
             <div class="hero-content">
                 <p class="tagline">👋 Hello, I'm</p>
                 <h1>
-                    Muhammad <span class="highlight">Kashan</span>
+                    Muhammad <span class="highlight">Kashan Dagha</span>
                 </h1>
                 <p>
                     <strong>Practicing Chartered Accountant (ACA, ICAP)</strong><br />
-                    Management Consultant<br /><br />
-                    I help businesses strengthen their finance function through financial reporting, internal controls, and practical business solutions.
+                    Management Consultant based in <strong>Karachi, Pakistan</strong><br /><br />
+                    I help businesses across Karachi and Pakistan strengthen their finance function through financial reporting, internal controls, and practical business solutions.
                 </p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">Let's Talk</a>
+                    <a href="international.html" class="btn btn-accent">🌍 International Clients</a>
                     <a href="#about" class="btn btn-outline">More About Me</a>
                 </div>
                 <div class="social-icons">
@@ -1246,17 +1449,17 @@
             <div class="section-header">
                 <span class="subtitle">About Me</span>
                 <h2>Who I Am &amp; What Drives Me</h2>
-                <p>Helping SMEs and growing businesses build stronger finance functions with structure and clarity.</p>
+                <p>Helping SMEs and growing businesses in Karachi and across Pakistan build stronger finance functions with structure and clarity.</p>
             </div>
             <div class="about-text">
                 <p>
-                    I am <strong>Muhammad Kashan, ACA (ICAP)</strong>, a Practicing Chartered Accountant and Management Consultant helping SMEs and growing businesses build stronger finance functions.
+                    I am <strong>Muhammad Kashan Dagha (MKD), ACA (ICAP)</strong>, a Practicing Chartered Accountant and Management Consultant based in <strong>Karachi, Pakistan</strong>, helping SMEs and growing businesses build stronger finance functions.
                 </p>
                 <p>
                     My career began in audit and assurance, where I led engagements across multiple industries under <strong>International Standards on Auditing (ISA)</strong>. This experience gave me a deep understanding of financial reporting, internal controls, risk assessment, and regulatory compliance.
                 </p>
                 <p>
-                    Today, I work closely with business owners as a trusted finance partner, helping them bring structure, clarity, and discipline to their finance operations.
+                    Today, I work closely with business owners in <strong>Karachi, Lahore, Islamabad, and across Pakistan</strong> as a trusted finance partner, helping them bring structure, clarity, and discipline to their finance operations.
                 </p>
                 <p>My areas of expertise include:</p>
                 <ul class="about-bullets">
@@ -1264,7 +1467,7 @@
                     <li><i class="fas fa-check-circle"></i><span><strong>Bookkeeping and accounting system implementation</strong></span></li>
                     <li><i class="fas fa-check-circle"></i><span><strong>Internal controls and process improvement</strong></span></li>
                     <li><i class="fas fa-check-circle"></i><span><strong>Management reporting and performance dashboards</strong></span></li>
-                    <li><i class="fas fa-check-circle"></i><span><strong>Income tax and sales tax compliance</strong></span></li>
+                    <li><i class="fas fa-check-circle"></i><span><strong>Income tax and sales tax compliance in Pakistan</strong></span></li>
                     <li><i class="fas fa-check-circle"></i><span><strong>Fractional Finance Manager services for SMEs</strong></span></li>
                 </ul>
                 <p>
@@ -1283,7 +1486,7 @@
             <div class="section-header">
                 <span class="subtitle">What I Do</span>
                 <h2>Finance Leadership for Growing Businesses</h2>
-                <p>I help SMEs and startups build stronger finance functions through practical accounting, financial reporting, internal controls, and people advisory services.</p>
+                <p>I help SMEs and startups in Karachi and across Pakistan build stronger finance functions through practical accounting, financial reporting, internal controls, and people advisory services.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
@@ -1341,9 +1544,9 @@
                     <h3>Tax Compliance</h3>
                     <p class="service-desc">Practical tax support to help businesses remain compliant and manage tax risks effectively.</p>
                     <ul class="service-list">
-                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Income tax compliance</span></li>
-                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Sales tax compliance</span></li>
-                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Tax return filing</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Income tax compliance in Pakistan</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Sales tax compliance in Pakistan</span></li>
+                        <li><i class="fas fa-chevron-right"></i><span class="srv-name">Tax return filing in Pakistan</span></li>
                         <li><i class="fas fa-chevron-right"></i><span class="srv-name">Tax advisory and notices</span></li>
                     </ul>
                 </div>
@@ -1351,19 +1554,22 @@
         </div>
     </section>
 
-    <!-- ===== INTERNATIONAL BOOKKEEPING SERVICES ===== -->
+    <!-- ===== BOOKKEEPING PRICING (LOCAL — PKR) ===== -->
     <section id="bookkeeping">
         <div class="container">
             <div class="section-header">
-                <span class="subtitle">Remote Bookkeeping Solutions</span>
-                <h2>International Bookkeeping Services</h2>
-                <p>Professional remote bookkeeping and finance support for startups and SMEs looking for accurate books, reliable reporting, and efficient finance operations.</p>
+                <span class="subtitle">💰 Pricing for Local Clients</span>
+                <h2>Affordable Bookkeeping — In PKR</h2>
+                <p>Transparent pricing designed for Pakistani SMEs and startups in Karachi, Lahore, and across Pakistan.</p>
             </div>
+
             <div class="pricing-grid">
+
+                <!-- Starter — PKR -->
                 <div class="pricing-card">
                     <div class="plan-name">Starter</div>
-                    <div class="plan-price">USD 149 <span>/ month</span></div>
-                    <div class="plan-sub">Ideal for freelancers and small businesses.</div>
+                    <div class="plan-price">PKR 25,000 <span>/ month</span></div>
+                    <div class="plan-sub">Ideal for freelancers and small businesses in Karachi.</div>
                     <ul class="plan-features">
                         <li><i class="fas fa-check-circle"></i><span class="feature-text">Up to 100 transactions per month</span></li>
                         <li><i class="fas fa-check-circle"></i><span class="feature-text">Recording and classification of transactions</span></li>
@@ -1374,11 +1580,13 @@
                     </ul>
                     <a href="#contact" class="btn-pricing">Get Started</a>
                 </div>
+
+                <!-- Growth — PKR (Popular) -->
                 <div class="pricing-card popular">
                     <div class="popular-badge">Popular</div>
                     <div class="plan-name">Growth</div>
-                    <div class="plan-price">USD 299 <span>/ month</span></div>
-                    <div class="plan-sub">Designed for growing businesses.</div>
+                    <div class="plan-price">PKR 49,000 <span>/ month</span></div>
+                    <div class="plan-sub">Designed for growing businesses in Pakistan.</div>
                     <ul class="plan-features">
                         <li><i class="fas fa-check-circle"></i><span class="feature-text">Up to 300 transactions per month</span></li>
                         <li><i class="fas fa-check-circle"></i><span class="feature-text">Full-cycle bookkeeping</span></li>
@@ -1391,9 +1599,11 @@
                     </ul>
                     <a href="#contact" class="btn-pricing">Get Started</a>
                 </div>
+
+                <!-- Premium — PKR -->
                 <div class="pricing-card">
                     <div class="plan-name">Premium</div>
-                    <div class="plan-price">USD 499 <span>/ month</span></div>
+                    <div class="plan-price">PKR 85,000+ <span>/ month</span></div>
                     <div class="plan-sub">For businesses seeking a complete outsourced finance function.</div>
                     <ul class="plan-features">
                         <li><i class="fas fa-check-circle"></i><span class="feature-text"><span class="highlight">Unlimited transactions*</span></span></li>
@@ -1409,8 +1619,20 @@
                     <div class="plan-note">*Pricing may vary depending on transaction volume and business complexity.</div>
                     <a href="#contact" class="btn-pricing" style="margin-top: 16px;">Get Started</a>
                 </div>
+
             </div>
-            <div class="software-section">
+
+            <div class="pricing-offer">
+                💡 <strong>Special Offer:</strong> First month at <strong>PKR 15,000</strong> — let me prove my value before you commit.
+            </div>
+
+            <div class="pricing-international-link">
+                🌍 <strong>Also serving international clients</strong> — 
+                <a href="international.html">View international pricing (USD) →</a>
+            </div>
+
+            <!-- Software Expertise -->
+            <div class="software-section" style="margin-top: 48px;">
                 <h3>Software Expertise</h3>
                 <div class="software-logos">
                     <div class="software-item"><i class="fab fa-google"></i> QuickBooks Online</div>
@@ -1419,6 +1641,7 @@
                     <div class="software-item"><i class="fas fa-file-excel"></i> Microsoft Excel</div>
                 </div>
             </div>
+
             <div class="pricing-tagline">
                 <span>Clean Books. Reliable Reports. Better Decisions.</span>
             </div>
@@ -1435,7 +1658,6 @@
             </div>
             <div class="blog-grid">
 
-                <!-- Blog Post 1: AI and Accountant -->
                 <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
                     <a href="blog-ai.png" target="_blank" class="blog-image-link">
                         <div class="blog-image" style="background-image: url('blog-ai.png');"></div>
@@ -1455,7 +1677,6 @@
                     </div>
                 </article>
 
-                <!-- Blog Post 2: Bookkeeping vs Accounting -->
                 <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
                     <a href="blog-bookkeeping.png" target="_blank" class="blog-image-link">
                         <div class="blog-image" style="background-image: url('blog-bookkeeping.png');"></div>
@@ -1475,7 +1696,6 @@
                     </div>
                 </article>
 
-                <!-- Blog Post 3: Ethical Issues in Accounting -->
                 <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
                     <a href="blog-ethics.png" target="_blank" class="blog-image-link">
                         <div class="blog-image" style="background-image: url('blog-ethics.png');"></div>
@@ -1502,13 +1722,87 @@
         </div>
     </section>
 
+    <!-- ===== FAQ SECTION ===== -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="subtitle">Common Questions</span>
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to the most common questions I receive from business owners in Karachi and across Pakistan.</p>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>What bookkeeping services do you offer in Karachi?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>I offer full-cycle bookkeeping in Karachi, including transaction recording, bank reconciliations, accounts payable/receivable management, payroll processing, and preparation of monthly management accounts. I also help businesses set up accounting systems and implement IFRS-compliant reporting.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>Do you work with international clients?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, I work with clients globally. My International Bookkeeping Services are designed specifically for remote clients. I use cloud-based accounting software like QuickBooks, Xero, and Zoho Books, making it easy to collaborate from anywhere. <a href="international.html">Learn more here</a>.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>What is a Fractional Finance Manager?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A Fractional Finance Manager is a part-time finance professional who provides strategic financial leadership without the cost of a full-time CFO. I help businesses in Karachi and across Pakistan with budgeting, cash flow management, financial planning, internal controls, and board reporting — giving SMEs access to high-level expertise at a fraction of the cost.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>How much do your services cost in Pakistan?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Pricing depends on your business size, transaction volume, and specific needs. My bookkeeping plans start from PKR 25,000/month for freelancers and small businesses in Karachi. For Fractional Finance Manager services and custom packages, I provide tailored quotes after understanding your requirements. <a href="#contact">Contact me</a> for a personalized quote.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>Do you help with tax compliance in Pakistan?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, I provide comprehensive tax compliance services in Pakistan including income tax return filing, sales tax compliance, withholding tax statements, and tax advisory. I help businesses in Karachi and across Pakistan stay compliant while managing tax risks effectively.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h4>How do I get started with your services in Karachi?</h4>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Getting started is simple. <a href="#contact">Reach out to me</a> through the contact form, WhatsApp, or email. I'll schedule a free consultation to understand your needs, assess your current situation, and recommend the right services for your business in Karachi or anywhere in Pakistan.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- ===== TESTIMONIALS ===== -->
     <section id="testimonials">
         <div class="container">
             <div class="section-header">
                 <span class="subtitle">Client Stories</span>
                 <h2>What My Clients Say</h2>
-                <p>Real feedback from people I've had the pleasure of working with.</p>
+                <p>Real feedback from people I've had the pleasure of working with in Karachi and across Pakistan.</p>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
@@ -1520,16 +1814,17 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <blockquote>
-                        “Muhammad Kashan handles all my accounting and tax filings with complete professionalism. As a media buyer, my income streams can be complex, but he manages everything seamlessly — from bookkeeping to filing my income tax returns. I don't have to worry about a thing.”
+                        “Muhammad Kashan Dagha handles all my accounting and tax filings with complete professionalism. As a media buyer, my income streams can be complex, but he manages everything seamlessly — from bookkeeping to filing my income tax returns in Pakistan. I don't have to worry about a thing.”
                     </blockquote>
                     <div class="client">
                         <div class="avatar-sm">MT</div>
                         <div>
                             <div class="name">Muhammad Talha</div>
-                            <div class="role">Media Buyer</div>
+                            <div class="role">Media Buyer, Karachi</div>
                         </div>
                     </div>
                 </div>
+
                 <div class="testimonial-card">
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -1539,16 +1834,17 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <blockquote>
-                        “Kashan takes care of the full bookkeeping for Panwala Estate and files income tax returns for me and my family members. His attention to detail and deep understanding of tax laws give us complete peace of mind. I highly recommend him to any business owner.”
+                        “MKD takes care of the full bookkeeping for Panwala Estate and files income tax returns for me and my family members. His attention to detail and deep understanding of tax laws in Pakistan give us complete peace of mind. I highly recommend him to any business owner in Karachi.”
                     </blockquote>
                     <div class="client">
                         <div class="avatar-sm">HP</div>
                         <div>
                             <div class="name">Hamza Panwala</div>
-                            <div class="role">Panwala Estate</div>
+                            <div class="role">Panwala Estate, Karachi</div>
                         </div>
                     </div>
                 </div>
+
                 <div class="testimonial-card">
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -1558,16 +1854,17 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <blockquote>
-                        “I rely on Muhammad Kashan for inventory valuation, sales tax annexure calculations, and management reporting. His professionalism and ability to deliver with a quick turnaround have made him an invaluable partner. The quality and timeliness of his work are consistently excellent.”
+                        “I rely on Muhammad Kashan Dagha for inventory valuation, sales tax annexure calculations, and management reporting. His professionalism and ability to deliver with a quick turnaround have made him an invaluable partner for my business in Pakistan.”
                     </blockquote>
                     <div class="client">
                         <div class="avatar-sm">SH</div>
                         <div>
                             <div class="name">Safdar Hussain</div>
-                            <div class="role">Director Finance</div>
+                            <div class="role">Director Finance, Pakistan</div>
                         </div>
                     </div>
                 </div>
+
                 <div class="testimonial-card">
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -1577,16 +1874,17 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <blockquote>
-                        “Muhammad Kashan handles end-to-end bookkeeping for my restaurant and clothing brand in Karachi. His reporting and business analytics have given me real clarity on my operations — I finally understand where my money is going and how to grow profitably.”
+                        “Muhammad Kashan Dagha handles end-to-end bookkeeping for my restaurant and clothing brand in Karachi. His reporting and business analytics have given me real clarity on my operations — I finally understand where my money is going and how to grow profitably.”
                     </blockquote>
                     <div class="client">
                         <div class="avatar-sm">JF</div>
                         <div>
                             <div class="name">Jaki &amp; Family</div>
-                            <div class="role">Restaurant &amp; Clothing Brand Owner</div>
+                            <div class="role">Restaurant &amp; Clothing Brand Owner, Karachi</div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -1597,7 +1895,7 @@
             <div class="section-header">
                 <span class="subtitle">Get In Touch</span>
                 <h2>Let's Work Together</h2>
-                <p>Have a financial challenge or a project in mind? I'd love to hear from you.</p>
+                <p>Have a financial challenge or a project in mind? I'd love to hear from you — whether you're in Karachi, Lahore, or anywhere in Pakistan.</p>
             </div>
             <div class="contact-wrapper">
                 <div class="contact-info">
@@ -1636,15 +1934,18 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="logo">MK<span>.</span></div>
-                    <p>Practicing Chartered Accountant (ACA, ICAP) and Management Consultant helping SMEs and growing businesses build stronger finance functions.</p>
+                    <div class="logo">MKD<span>.</span></div>
+                    <p>Practicing Chartered Accountant (ACA, ICAP) and Management Consultant based in Karachi, Pakistan. Helping SMEs and growing businesses across Karachi, Lahore, Islamabad, and Pakistan build stronger finance functions.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <a href="#home">Home</a>
                     <a href="#about">About</a>
                     <a href="#services">Services</a>
+                    <a href="#bookkeeping">Pricing</a>
+                    <a href="international.html">🌍 International</a>
                     <a href="#blog">Blog</a>
+                    <a href="#faq">FAQ</a>
                 </div>
                 <div class="footer-links">
                     <h4>Connect</h4>
@@ -1654,7 +1955,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 <span>Muhammad Kashan</span>. All rights reserved.</p>
+                <p>&copy; 2026 <span>Muhammad Kashan Dagha (MKD)</span> — Karachi, Pakistan. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1695,7 +1996,6 @@
                 }
             });
 
-            // Header shadow on scroll
             const header = document.getElementById('header');
             if (window.scrollY > 20) {
                 header.classList.add('scrolled');
@@ -1704,8 +2004,19 @@
             }
         });
 
-        // ---- Contact form (mailto) ----
-        // No JavaScript needed — form uses mailto:
+        // ---- FAQ Toggle ----
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.faq-icon');
+
+            if (answer.classList.contains('open')) {
+                answer.classList.remove('open');
+                icon.textContent = '+';
+            } else {
+                answer.classList.add('open');
+                icon.textContent = '×';
+            }
+        }
     </script>
 
 </body>
