@@ -16,7 +16,7 @@
     <meta name="description" content="Muhammad Kashan Dagha (MKD) is a Practicing Chartered Accountant (ACA, ICAP) and Management Consultant in Karachi, Pakistan. I help SMEs with bookkeeping, tax compliance, and financial reporting services." />
     <meta name="keywords" content="Muhammad Kashan Dagha, MKD, Chartered Accountant Karachi, Bookkeeping Services Pakistan, Tax Consultant Karachi, Fractional Finance Manager, IFRS Reporting, SME Finance Consultant Karachi, Accountant near me Karachi" />
 
-    <!-- ✅ CANONICAL TAG -->
+    <!-- CANONICAL TAG -->
     <link rel="canonical" href="https://muhammadkashandagha.github.io/" />
 
     <!-- Local Business Schema Markup -->
@@ -356,7 +356,6 @@
             background: linear-gradient(135deg, var(--accent), var(--accent-light));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            /* ✅ IMPROVED CONTRAST: subtle shadow for readability */
             text-shadow: 0 2px 8px rgba(201, 168, 76, 0.15);
         }
 
@@ -1098,7 +1097,7 @@
             width: 100%;
         }
 
-        /* ----- FLOATING WHATSAPP BUTTON (NEW) ----- */
+        /* ----- FLOATING WHATSAPP BUTTON ----- */
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -1123,6 +1122,137 @@
         .whatsapp-float:hover {
             transform: scale(1.1);
             box-shadow: 0 8px 32px rgba(37, 211, 102, 0.5);
+        }
+
+        /* ===== NEWSLETTER POPUP MODAL ===== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #fff;
+            max-width: 480px;
+            width: 100%;
+            padding: 40px 34px;
+            border-radius: var(--radius);
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: modalFadeIn 0.4s ease;
+            border-top: 6px solid var(--accent);
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            font-size: 1.8rem;
+            font-weight: 300;
+            cursor: pointer;
+            color: #94a3b8;
+            transition: var(--transition);
+            background: none;
+            border: none;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: #1e293b;
+            transform: rotate(90deg);
+        }
+
+        .modal-box h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .modal-box h3 i {
+            color: var(--accent);
+            margin-right: 8px;
+        }
+
+        .modal-box .modal-sub {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .modal-box .modal-sub:last-of-type {
+            margin-bottom: 20px;
+        }
+
+        .modal-box .modal-form input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1.5px solid #e2e8f0;
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            transition: var(--transition);
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 12px;
+        }
+
+        .modal-box .modal-form input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.1);
+        }
+
+        .modal-box .modal-form button {
+            width: 100%;
+            padding: 14px;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 4px 16px rgba(201, 168, 76, 0.3);
+        }
+
+        .modal-box .modal-form button:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(201, 168, 76, 0.4);
+        }
+
+        .modal-box .modal-note {
+            text-align: center;
+            margin-top: 14px;
+            font-size: 0.8rem;
+            color: #94a3b8;
         }
 
         /* ----- FOOTER ----- */
@@ -1221,13 +1351,6 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 30px;
             }
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                font-size: 1.6rem;
-                bottom: 20px;
-                right: 20px;
-            }
         }
 
         @media (max-width: 768px) {
@@ -1279,6 +1402,12 @@
             }
             .footer-brand p {
                 max-width: 100%;
+            }
+            .modal-box {
+                padding: 30px 20px;
+            }
+            .modal-box h3 {
+                font-size: 1.3rem;
             }
             .whatsapp-float {
                 width: 50px;
@@ -1630,7 +1759,6 @@
                 </article>
 
             </div>
-            <!-- ✅ FIXED: "View All Articles" now scrolls to the blog section smoothly -->
             <div style="text-align: center; margin-top: 40px;">
                 <a href="#blog" class="btn btn-outline">View All Articles →</a>
             </div>
@@ -1833,7 +1961,6 @@
                         <a href="https://www.linkedin.com/in/kashandagha/" target="_blank" class="btn btn-outline" style="padding: 12px 28px;"><i class="fab fa-linkedin-in" style="margin-right: 8px;"></i> LinkedIn</a>
                     </div>
                 </div>
-                <!-- Contact form with Formspree (fixed) -->
                 <form class="contact-form" action="https://formspree.io/f/xvzjpzwd" method="POST">
                     <input type="hidden" name="_subject" value="New Contact Form Submission from MKD Website" />
                     <input type="text" name="name" placeholder="Your Name" required aria-required="true" />
@@ -1877,10 +2004,26 @@
         </div>
     </footer>
 
-    <!-- ===== FLOATING WHATSAPP BUTTON (NEW - VISIBLE ON ALL PAGES) ===== -->
+    <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
     <a href="https://wa.me/923333397984" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- ===== NEWSLETTER POPUP MODAL ===== -->
+    <div class="modal-overlay" id="newsletterModal">
+        <div class="modal-box">
+            <button class="modal-close" id="modalClose" aria-label="Close newsletter popup">×</button>
+            <h3><i class="fas fa-envelope"></i> Stay Connected</h3>
+            <p class="modal-sub">Join my mailing list to receive occasional insights on bookkeeping and financial reporting.</p>
+            <p class="modal-sub">Be the first to hear about new articles, practical resources, and service updates as I continue expanding my practice.</p>
+            <form class="modal-form" id="newsletterForm" action="https://formspree.io/f/xvzjpzwd" method="POST">
+                <input type="hidden" name="_subject" value="Newsletter Signup from MKD Website" />
+                <input type="email" name="email" placeholder="Enter your email" required aria-required="true" />
+                <button type="submit">Join the Community</button>
+            </form>
+            <p class="modal-note">No spam. Unsubscribe anytime. 🔒</p>
+        </div>
+    </div>
 
     <!-- ===== JAVASCRIPT ===== -->
     <script>
@@ -1939,6 +2082,64 @@
                 icon.textContent = '×';
             }
         }
+
+        // ===== NEWSLETTER POPUP LOGIC (WITH 7-DAY EXPIRY) =====
+        (function() {
+            const modal = document.getElementById('newsletterModal');
+            const closeBtn = document.getElementById('modalClose');
+            const form = document.getElementById('newsletterForm');
+
+            // Check if the popup was closed recently
+            const closedData = localStorage.getItem('mkd_modal_closed');
+            let shouldShow = true;
+
+            if (closedData) {
+                try {
+                    const closedTime = parseInt(closedData, 10);
+                    const now = Date.now();
+                    const sevenDays = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
+                    // If less than 7 days have passed, don't show
+                    if (now - closedTime < sevenDays) {
+                        shouldShow = false;
+                    }
+                } catch (e) {
+                    shouldShow = true;
+                }
+            }
+
+            if (shouldShow) {
+                setTimeout(function() {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }, 4000);
+            }
+
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                // Store the current timestamp
+                localStorage.setItem('mkd_modal_closed', Date.now().toString());
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeModal);
+            }
+
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    setTimeout(function() {
+                        closeModal();
+                        alert("✅ Thank you! You're now subscribed to finance insights.");
+                    }, 500);
+                });
+            }
+        })();
     </script>
 
 </body>
