@@ -1,9 +1,4 @@
-# Allow all crawlers
 User-agent: *
 Allow: /
 
-# Disallow access to sensitive or draft pages (if any)
-# Disallow: /draft.html
-
-# Tell search engines where your sitemap is
 Sitemap: https://muhammadkashandagha.github.io/sitemap.xml
