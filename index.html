@@ -740,6 +740,41 @@
             color: var(--accent);
         }
 
+        /* ----- TAX CALCULATOR CALLOUT ----- */
+        .tax-callout {
+            background: #f0f7ff;
+            padding: 60px 0;
+            border-top: 1px solid #e6eef9;
+            border-bottom: 1px solid #e6eef9;
+            text-align: center;
+        }
+        .tax-callout .callout-icon {
+            font-size: 3rem;
+            margin-bottom: 8px;
+        }
+        .tax-callout h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1a365d;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .tax-callout h2 span {
+            color: #c9a84c;
+        }
+        .tax-callout p {
+            color: #64748b;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto 24px;
+        }
+        .tax-callout .btn-accent {
+            padding: 16px 48px;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 24px rgba(201, 168, 76, 0.3);
+        }
+
         /* ----- BLOG SECTION ----- */
         #blog {
             background: var(--bg-light);
@@ -1416,6 +1451,13 @@
                 bottom: 20px;
                 right: 20px;
             }
+            .tax-callout h2 {
+                font-size: 1.8rem;
+            }
+            .tax-callout .btn-accent {
+                padding: 14px 32px;
+                font-size: 1rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1435,6 +1477,13 @@
                 font-size: 1.4rem;
                 bottom: 16px;
                 right: 16px;
+            }
+            .tax-callout h2 {
+                font-size: 1.5rem;
+            }
+            .tax-callout p {
+                font-size: 0.95rem;
+                padding: 0 12px;
             }
         }
     </style>
@@ -1458,6 +1507,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#pricing">Pricing</a></li>
+                <li><a href="tax-calculator.html">🧮 Tax Calculator</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
@@ -1688,6 +1738,19 @@
 
             </div>
             <p class="pricing-note">💡 <strong>Special Offer:</strong> Try Basic or Growth for your first month at just <strong>PKR 15,000</strong> — let the results speak before you commit.</p>
+        </div>
+    </section>
+
+    <!-- ===== TAX CALCULATOR CALLOUT ===== -->
+    <section class="tax-callout">
+        <div class="container">
+            <div class="callout-icon">🧮</div>
+            <h2>Calculate Your Income Tax <span>2026–2027</span></h2>
+            <p>
+                For salaried individuals in Pakistan – updated as per the latest Federal Budget.
+                Enter your monthly salary and see your tax liability instantly, plus a Year‑on‑Year trend.
+            </p>
+            <a href="tax-calculator.html" class="btn btn-accent">Try the Tax Calculator →</a>
         </div>
     </section>
 
@@ -1987,6 +2050,7 @@
                     <a href="#about">About</a>
                     <a href="#services">Services</a>
                     <a href="#pricing">Pricing</a>
+                    <a href="tax-calculator.html">🧮 Tax Calculator</a>
                     <a href="#blog">Blog</a>
                     <a href="#faq">FAQ</a>
                     <a href="international.html">🌍 International Clients</a>
