@@ -28,6 +28,9 @@
     <link rel="alternate" href="https://muhammadkashandagha.github.io/international.html" hreflang="en-gb" />
     <link rel="alternate" href="https://muhammadkashandagha.github.io/index.html" hreflang="en-pk" />
 
+    <!-- ✅ CANONICAL TAG ADDED -->
+    <link rel="canonical" href="https://muhammadkashandagha.github.io/international.html" />
+
     <!-- International Business Schema -->
     <script type="application/ld+json">
     {
@@ -313,6 +316,7 @@
             background: linear-gradient(135deg, var(--accent), var(--accent-light));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 8px rgba(201, 168, 76, 0.15);
         }
 
         .hero-content .tagline {
@@ -363,6 +367,8 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            role: img;
+            aria-label: "Muhammad Kashan Dagha - Professional Headshot";
         }
 
         .social-icons {
@@ -691,6 +697,33 @@
             transform: translateY(-3px);
         }
 
+        /* ----- FLOATING WHATSAPP BUTTON (ADDED) ----- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+            z-index: 9999;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 32px rgba(37, 211, 102, 0.5);
+        }
+
         /* ----- FOOTER ----- */
         footer {
             background: var(--primary-dark);
@@ -774,6 +807,13 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 30px;
             }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.6rem;
+                bottom: 20px;
+                right: 20px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -820,6 +860,13 @@
             .footer-brand p {
                 max-width: 100%;
             }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.6rem;
+                bottom: 20px;
+                right: 20px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -829,6 +876,13 @@
             }
             .locations-grid {
                 grid-template-columns: 1fr;
+            }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+                bottom: 16px;
+                right: 16px;
             }
         }
     </style>
@@ -881,7 +935,7 @@
             </div>
             <div class="hero-image">
                 <div class="avatar-wrapper">
-                    <div class="avatar"></div>
+                    <div class="avatar" role="img" aria-label="Muhammad Kashan Dagha - Professional Headshot"></div>
                 </div>
             </div>
         </div>
@@ -1100,6 +1154,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- ===== FLOATING WHATSAPP BUTTON (ADDED) ===== -->
+    <a href="https://wa.me/923333397984" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <!-- ===== JAVASCRIPT ===== -->
     <script>
